@@ -1,8 +1,15 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
+import Main from "./components/Main";
+import Nav from "./components/Nav";
 
 function App() {
-  return <h1 className="m-4 p-3 text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Nav />
+      <Main />
+    </>
+  );
 }
 
 export default App;
