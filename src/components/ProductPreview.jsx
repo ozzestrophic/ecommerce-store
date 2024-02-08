@@ -1,21 +1,24 @@
 import image from "../assets/images/fifa-1/fifa-1.jpeg";
-import fifaLogo from "../assets/images/fifa-1/fifa-0.avif";
+
+import ProductSidebar from "./ProductSidebar";
 
 const ProductPreview = () => {
   return (
-    <section className="grid grid-cols-product gap-12 max-w-7xl">
-      <img src={image} alt="" className="rounded-md" />
-      <div className="flex flex-col gap-4">
-        <img src={fifaLogo} alt="" className=" p-16" />
-        <div className="py-1 px-2 bg-gray-800 text-xs w-fit rounded-md">
-          <p>BASE GAME</p>
-        </div>
-        <p>$69.99</p>
-        <div className="flex flex-col gap-2">
-          <button className=" bg-epicBlue p-3 rounded-md">Add to Cart</button>
-          <button className=" border p-3 rounded-md">Buy Now</button>
+    <section className="grid grid-cols-product gap-16 max-w-7xl">
+      <div className="flex flex-col gap-16">
+        <img src={image} alt="" className="rounded-md" />
+        <p className="text-xl">
+          EA SPORTS FC™ 24 welcomes you to The World’s Game: the most
+          true-to-football experience ever with HyperMotionV, PlayStyles
+          optimised by Opta, and an enhanced Frostbite™ Engine.
+        </p>
+
+        <div>
+          <p className="opacity-75 font-light">Genres</p>
+          <p className=" underline">Simulation</p>
         </div>
       </div>
+      <ProductSidebar />
     </section>
   );
 };
