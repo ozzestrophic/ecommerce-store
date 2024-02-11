@@ -1,4 +1,4 @@
-const ProductSidebarTab = ({ leftText, rightText, icon }) => {
+const ProductSidebarTab = ({ leftText, rightText }) => {
   return (
     <div>
       <div className="flex justify-between font-light">

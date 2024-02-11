@@ -1,4 +1,4 @@
-import image1 from "../assets/images/image-1.avif";
+import image1 from "../../assets/images/image-1.avif";
 import CarouselTab from "./CarouselTab";
 
 const Carousel = () => {

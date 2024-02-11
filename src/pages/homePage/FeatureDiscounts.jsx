@@ -1,11 +1,11 @@
 import Card from "./Card";
 
-import image1 from "../assets/images/image-1.avif";
-import botImage1 from "../assets/images/bot-img-1.avif";
-import botImage2 from "../assets/images/bot-img-2.avif";
-import botImage3 from "../assets/images/bot-img-3.avif";
-import botImage4 from "../assets/images/bot-img-4.avif";
-import botImage5 from "../assets/images/bot-img-5.avif";
+import image1 from "../../assets/images/image-1.avif";
+import botImage1 from "../../assets/images/bot-img-1.avif";
+import botImage2 from "../../assets/images/bot-img-2.avif";
+import botImage3 from "../../assets/images/bot-img-3.avif";
+import botImage4 from "../../assets/images/bot-img-4.avif";
+import botImage5 from "../../assets/images/bot-img-5.avif";
 
 const FeatureDiscounts = () => {
   return (

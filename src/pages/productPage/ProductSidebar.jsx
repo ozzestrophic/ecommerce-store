@@ -1,6 +1,6 @@
-import fifaLogo from "../assets/images/fifa-1/fifa-0.avif";
+import fifaLogo from "../../assets/images/fifa-1/fifa-0.avif";
 import ProductSidebarTab from "./ProductSidebarTab";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { byPrefixAndName } from "@awesome.me/kit-KIT_CODE/icons";
 
 const ProductSidebar = () => {
