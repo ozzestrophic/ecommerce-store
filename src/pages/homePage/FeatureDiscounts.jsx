@@ -1,8 +1,6 @@
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
-import image1 from "../../assets/images/image-1.avif";
-
 import { db } from "../../../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
