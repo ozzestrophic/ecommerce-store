@@ -23,7 +23,7 @@ const GamePreview = () => {
       }
     };
     loadGameData(id);
-  }, []);
+  }, [id]);
 
   if (game) {
     return (

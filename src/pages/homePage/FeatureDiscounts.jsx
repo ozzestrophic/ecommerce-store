@@ -31,7 +31,7 @@ const FeatureDiscounts = () => {
       }
     };
     getGamesList();
-  }, []);
+  }, [gamesCollectionRef]);
 
   return (
     <article>
