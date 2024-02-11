@@ -5,7 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import GamePreview from "./pages/productPage/GamePreview.jsx";
 import Home from "./pages/homePage/Home.jsx";
-import { loaderCarousel } from "./pages/homePage/Carousel.jsx";
+import loaderCarousel from "./pages/homePage/loaderCarousel.js";
 
 const router = createBrowserRouter([
   {

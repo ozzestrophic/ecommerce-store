@@ -4,16 +4,34 @@
       "id": "1",
       "title": "Fifa",
       "Publisher": "Electronic Arts",
-      "img": "../src/assets/images/image-1.avif"
+      "img": "../src/assets/images/bot-img-1.avif"
     },
     {
       "id": "2",
       "title": "GTA",
       "Publisher": "Rock Star",
-      "img": "../src/assets/images/image-1.avif"
+      "img": "../src/assets/images/bot-img-2.avif"
     },
     {
       "id": "3",
+      "title": "AC Brotherhood",
+      "Publisher": "Ubisoft",
+      "img": "../src/assets/images/bot-img-3.avif"
+    },
+    {
+      "id": "4",
+      "title": "AC Brotherhood",
+      "Publisher": "Ubisoft",
+      "img": "../src/assets/images/bot-img-4.avif"
+    },
+    {
+      "id": "5",
+      "title": "AC Brotherhood",
+      "Publisher": "Ubisoft",
+      "img": "../src/assets/images/bot-img-5.avif"
+    },
+    {
+      "id": "6",
       "title": "AC Brotherhood",
       "Publisher": "Ubisoft",
       "img": "../src/assets/images/image-1.avif"

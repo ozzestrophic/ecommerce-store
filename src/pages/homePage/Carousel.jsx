@@ -18,9 +18,9 @@ const Carousel = () => {
           return (
             <Link key={game.id} to={`game/${game.id}`}>
               {game.id === "1" ? (
-                <CarouselTab active={true} image={image1} name={game.title} />
+                <CarouselTab active={true} image={game.img} name={game.title} />
               ) : (
-                <CarouselTab key={game.id} image={image1} name={game.title} />
+                <CarouselTab key={game.id} image={game.img} name={game.title} />
               )}
             </Link>
           );
@@ -30,9 +30,3 @@ const Carousel = () => {
   );
 };
 export default Carousel;
-
-export async function loaderCarousel() {
-  const res = await fetch("http://localhost:4000/games");
-
-  return res.json();
-}
