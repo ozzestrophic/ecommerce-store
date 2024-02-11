@@ -1,0 +1,22 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "title": "Fifa",
+      "Publisher": "Electronic Arts",
+      "img": "../src/assets/images/image-1.avif"
+    },
+    {
+      "id": "2",
+      "title": "GTA",
+      "Publisher": "Rock Star",
+      "img": "../src/assets/images/image-1.avif"
+    },
+    {
+      "id": "3",
+      "title": "AC Brotherhood",
+      "Publisher": "Ubisoft",
+      "img": "../src/assets/images/image-1.avif"
+    }
+  ]
+}

@@ -1,8 +1,11 @@
+import { useParams } from "react-router-dom";
 import image from "../../assets/images/fifa-1/fifa-1.jpeg";
 
-import ProductSidebar from "./ProductSidebar";
+import PreviewSidebar from "./PreviewSidebar";
 
-const ProductPreview = () => {
+const GamePreview = () => {
+  const { id } = useParams();
+
   return (
     <section className="">
       <article>
@@ -33,9 +36,9 @@ const ProductPreview = () => {
             </div>
           </div>
         </div>
-        <ProductSidebar />
+        <PreviewSidebar />
       </article>
     </section>
   );
 };
-export default ProductPreview;
+export default GamePreview;

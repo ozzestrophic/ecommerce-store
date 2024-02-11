@@ -1,4 +1,4 @@
-const ProductSidebarTab = ({ leftText, rightText }) => {
+const PreviewSidebarTab = ({ leftText, rightText }) => {
   return (
     <div>
       <div className="flex justify-between font-light">
@@ -11,4 +11,4 @@ const ProductSidebarTab = ({ leftText, rightText }) => {
     </div>
   );
 };
-export default ProductSidebarTab;
+export default PreviewSidebarTab;

@@ -1,9 +1,9 @@
 import fifaLogo from "../../assets/images/fifa-1/fifa-0.avif";
-import ProductSidebarTab from "./ProductSidebarTab";
+import PreviewSidebarTab from "./PreviewSidebarTab";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { byPrefixAndName } from "@awesome.me/kit-KIT_CODE/icons";
 
-const ProductSidebar = () => {
+const PreviewSidebar = () => {
   return (
     <div className="flex flex-col gap-4">
       <img src={fifaLogo} alt="" className=" p-16" />
@@ -19,13 +19,13 @@ const ProductSidebar = () => {
         </button>
       </div>
       {/* <FontAwesomeIcon icon={byPrefixAndName.fas["house"]} /> */}
-      <ProductSidebarTab leftText="Epic Rewards" rightText="Earn 5% Back" />
-      <ProductSidebarTab leftText="Refund Type" rightText="Self Refundable" />
-      <ProductSidebarTab leftText="Developer" rightText="EA Canda" />
-      <ProductSidebarTab leftText="Publisher" rightText="Electronic Arts" />
-      <ProductSidebarTab leftText="Release Date" rightText="09/29/23" />
-      <ProductSidebarTab leftText="Platform" rightText="" />
+      <PreviewSidebarTab leftText="Epic Rewards" rightText="Earn 5% Back" />
+      <PreviewSidebarTab leftText="Refund Type" rightText="Self Refundable" />
+      <PreviewSidebarTab leftText="Developer" rightText="EA Canda" />
+      <PreviewSidebarTab leftText="Publisher" rightText="Electronic Arts" />
+      <PreviewSidebarTab leftText="Release Date" rightText="09/29/23" />
+      <PreviewSidebarTab leftText="Platform" rightText="" />
     </div>
   );
 };
-export default ProductSidebar;
+export default PreviewSidebar;
