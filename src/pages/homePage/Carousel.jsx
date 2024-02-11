@@ -4,7 +4,6 @@ import CarouselTab from "./CarouselTab";
 
 const Carousel = () => {
   const games = useLoaderData();
-  console.log(games);
 
   return (
     <article className=" max-w-6xl grid grid-cols-carousel gap-8 font-light">
