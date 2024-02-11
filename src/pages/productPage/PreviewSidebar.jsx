@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { cartContext } from "../../App.jsx";
 import fifaLogo from "../../assets/images/fifa-1/fifa-0.avif";
 import PreviewSidebarTab from "./PreviewSidebarTab";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { byPrefixAndName } from "@awesome.me/kit-KIT_CODE/icons";
 
-const PreviewSidebar = () => {
+const PreviewSidebar = ({ title }) => {
+  const { addToCart, cartItems } = useContext(cartContext);
   return (
     <div className="flex flex-col gap-4">
       <img src={fifaLogo} alt="" className=" p-16" />
@@ -12,7 +15,13 @@ const PreviewSidebar = () => {
       </div>
       <p>$69.99</p>
       <div className="flex flex-col gap-2 uppercase">
-        <button className=" bg-epicBlue p-3 rounded-md">Add to Cart</button>
+        <button
+          className=" bg-epicBlue p-3 rounded-md disabled:bg-blue-100 disabled:text-gray-400"
+          onClick={() => addToCart(title)}
+          disabled={cartItems.includes(title)}
+        >
+          {cartItems.includes(title) ? "Game already added" : "Add to Cart"}
+        </button>
         <button className=" border p-3 rounded-md">Buy Now</button>
         <button className=" border p-2 text-sm rounded-md">
           Add to wishlist

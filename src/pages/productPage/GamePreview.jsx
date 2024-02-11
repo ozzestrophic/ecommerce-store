@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../config/firebase";
 
-import image from "../../assets/images/fifa-1/fifa-1.jpeg";
 import PreviewSidebar from "./PreviewSidebar";
 
 const GamePreview = () => {
@@ -19,7 +18,6 @@ const GamePreview = () => {
         const docRef = doc(db, "Games", id);
         const gameDoc = await getDoc(docRef);
         setGame(gameDoc.data());
-        console.log(game);
       } catch (err) {
         console.error(err);
       }
@@ -36,7 +34,7 @@ const GamePreview = () => {
         <article className="grid grid-cols-product gap-16 max-w-7xl">
           <div className="flex flex-col gap-16">
             <img
-              src={game.imgUrl ? game.imgUrl : image}
+              src={game.imgUrl && game.imgUrl}
               alt=""
               className="rounded-md"
             />
@@ -62,7 +60,7 @@ const GamePreview = () => {
               </div>
             </div>
           </div>
-          <PreviewSidebar />
+          <PreviewSidebar title={game.title} />
         </article>
       </section>
     );
