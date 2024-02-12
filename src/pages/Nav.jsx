@@ -10,10 +10,10 @@ const Nav = () => {
       <Link to="/">
         <img src={storeIcon} alt="" className="w-14" />
       </Link>
-      <div className="flex gap-2">
+      <Link to="cart" className="flex gap-2">
         <p>Cart</p>
         {cartItems.length !== 0 && cartItems.length}
-      </div>
+      </Link>
     </nav>
   );
 };
