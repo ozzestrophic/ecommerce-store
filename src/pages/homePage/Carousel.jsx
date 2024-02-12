@@ -6,16 +6,17 @@ import { useState } from "react";
 const Carousel = ({ gamesList }) => {
   const [activeImage, setActiveImage] = useState();
   return (
-    <article className=" max-w-6xl grid grid-cols-carousel gap-8 font-light">
+    <article className=" max-w-6xl grid md:grid-cols-carousel gap-8 font-light">
       <img
-        src={activeImage}
+        src={activeImage || image1}
         alt=""
         className="rounded-2xl w-full h-full object-cover"
       />
-      <div className="flex flex-col gap-1">
+      <div className="flex md:flex-col overflow-scroll gap-1">
         {gamesList.map((game) => {
           return (
             <div
+              className=" min-w-fit"
               key={game.id}
               onMouseEnter={() => {
                 setActiveImage(game.imgUrl);

@@ -22,7 +22,7 @@ const FeatureDiscounts = () => {
   return (
     <article>
       <h3 className="text-lg font-light">Feature Discounts</h3>
-      <div className=" grid grid-cols-6 gap-8 h-96 max-w-6xl mt-4">
+      <div className=" grid grid-cols-2 content-center md:grid-cols-5 gap-8 max-w-6xl mt-4">
         {gamesList.map((game) => {
           return (
             <Link key={game.id} to={`game/${game.id}`}>
