@@ -2,10 +2,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-// firebase imports
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../config/firebase";
-
 import PreviewSidebar from "./PreviewSidebar";
 
 const GamePreview = () => {
@@ -15,11 +11,13 @@ const GamePreview = () => {
   useEffect(() => {
     const loadGameData = async () => {
       try {
-        const docRef = doc(db, "Games", id);
-        const gameDoc = await getDoc(docRef);
-        setGame(gameDoc.data());
+        const gamesList = await fetch("http://localhost:4000/games");
+        const filteredData = await gamesList.json();
+
+        const [gameData] = filteredData.filter((game) => game.id === id);
+        setGame(gameData);
       } catch (err) {
-        console.error(err);
+        console.log(err);
       }
     };
     loadGameData(id);

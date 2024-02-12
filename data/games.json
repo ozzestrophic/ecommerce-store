@@ -4,37 +4,31 @@
       "id": "1",
       "title": "Fifa",
       "Publisher": "Electronic Arts",
-      "img": "../src/assets/images/bot-img-1.avif"
+      "imgUrl": "../src/assets/images/games/fifa-1.jpeg"
     },
     {
       "id": "2",
       "title": "GTA",
       "Publisher": "Rock Star",
-      "img": "../src/assets/images/bot-img-2.avif"
+      "imgUrl": "../src/assets/images/games/gtav.webp"
     },
     {
       "id": "3",
       "title": "AC Brotherhood",
       "Publisher": "Ubisoft",
-      "img": "../src/assets/images/bot-img-3.avif"
+      "imgUrl": "../src/assets/images/games/ACbrotherhood.jpeg"
     },
     {
       "id": "4",
-      "title": "AC Brotherhood",
-      "Publisher": "Ubisoft",
-      "img": "../src/assets/images/bot-img-4.avif"
+      "title": "League of Legends",
+      "Publisher": "Riot",
+      "imgUrl": "../src/assets/images/games/leagueoflegends.jpeg"
     },
     {
       "id": "5",
-      "title": "AC Brotherhood",
-      "Publisher": "Ubisoft",
-      "img": "../src/assets/images/bot-img-5.avif"
-    },
-    {
-      "id": "6",
-      "title": "AC Brotherhood",
-      "Publisher": "Ubisoft",
-      "img": "../src/assets/images/image-1.avif"
+      "title": "Metal Gear Solid",
+      "Publisher": "Konami",
+      "imgUrl": "../src/assets/images/games/MTG.jpeg"
     }
   ]
 }
