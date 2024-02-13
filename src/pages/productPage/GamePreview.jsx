@@ -26,13 +26,13 @@ const GamePreview = () => {
 
   if (game) {
     return (
-      <div className=" max-w-7xl">
+      <div className=" max-w-6xl">
         <section>
           <h1 className=" text-left text-4xl mb-4">{game.title}</h1>
         </section>
         <section className="grid md:grid-cols-product gap-16">
           <PreviewData game={game} />
-          <PreviewSidebar title={game.title} />
+          <PreviewSidebar game={game} />
         </section>
       </div>
     );
