@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../App.jsx";
+
 import CartItem from "./CartItem.jsx";
 import CartSideBar from "./CartSideBar.jsx";
+
 import supabase from "../../config/supabaseClient.js";
 
 function calculateTotal(dataArray, key) {
@@ -38,7 +40,7 @@ const Cart = () => {
     };
 
     loadGames();
-  }, []);
+  }, [cartItems]);
 
   useEffect(() => {
     if (games) {

@@ -5,6 +5,7 @@ import Nav from "./pages/Nav";
 export const cartContext = createContext({
   cartItems: [],
   addToCart: () => {},
+  removeCartItem: () => {},
 });
 
 function App() {
@@ -14,8 +15,15 @@ function App() {
     setCartItems([...cartItems, newItem]);
   };
 
+  const removeCartItem = (itemToBeRemoved) => {
+    const newCart = cartItems.filter(
+      (cartItem) => itemToBeRemoved !== cartItem
+    );
+    setCartItems(newCart);
+  };
+
   return (
-    <cartContext.Provider value={{ cartItems, addToCart }}>
+    <cartContext.Provider value={{ cartItems, addToCart, removeCartItem }}>
       <Nav />
       <Body />
     </cartContext.Provider>

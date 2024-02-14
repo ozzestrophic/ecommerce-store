@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { cartContext } from "../../App";
+
 const CartItem = ({ game }) => {
+  const { removeCartItem, cartItems } = useContext(cartContext);
+
   return (
     <article className=" bg-zinc-800 w-full flex gap-8 p-10">
       <img
@@ -25,7 +30,10 @@ const CartItem = ({ game }) => {
             )}
             <span>{game.currentPrice}</span>
           </div>
-          <button className="border border-zinc-600 p-2 rounded-lg text-zinc-400">
+          <button
+            className="border border-zinc-600 p-2 rounded-lg text-zinc-400"
+            onClick={() => removeCartItem(game.id)}
+          >
             Remove
           </button>
         </div>
