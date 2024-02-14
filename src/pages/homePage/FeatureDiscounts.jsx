@@ -1,22 +1,27 @@
 import Card from "./Card";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import supabase from "../../config/supabaseClient";
 
 const FeatureDiscounts = () => {
   const [gamesList, setGamesList] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
 
   useEffect(() => {
-    const getGamesList = async () => {
-      try {
-        const data = await fetch("http://localhost:4000/games");
-        const filteredData = await data.json();
-
-        setGamesList(filteredData);
-      } catch (error) {
-        console.error(error);
+    const fetchGames = async () => {
+      const { data, error } = await supabase.from("games").select().limit(5);
+      if (error) {
+        setFetchError("couldn't fetch games");
+        setGamesList(null);
+        console.log(fetchError);
+      }
+      if (data) {
+        setGamesList(data);
+        setFetchError(null);
       }
     };
-    getGamesList();
+
+    fetchGames();
   }, []);
 
   return (
@@ -26,7 +31,7 @@ const FeatureDiscounts = () => {
         {gamesList.map((game) => {
           return (
             <Link key={game.id} to={`game/${game.id}`}>
-              <Card image={game.imgUrl} title={game.title} />
+              <Card game={game} />
             </Link>
           );
         })}
