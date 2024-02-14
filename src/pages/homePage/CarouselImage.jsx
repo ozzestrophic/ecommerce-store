@@ -14,7 +14,7 @@ const CarouselImage = ({ activeGame }) => {
     loadGame();
   }, [activeGame]);
   return (
-    <div className="h-full w-full">
+    <div className="">
       {Game.imgUrl && (
         <img
           src={Game.imgUrl}

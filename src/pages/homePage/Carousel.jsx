@@ -11,9 +11,9 @@ const Carousel = ({ gamesList }) => {
   }, [gamesList]);
 
   return (
-    <article className=" max-w-6xl grid md:grid-cols-carousel gap-8 font-light">
+    <article className=" max-w-6xl grid grid-cols-1 md:grid-cols-carousel gap-8 font-light">
       <CarouselImage activeGame={activeGame} />
-      <div className="flex md:flex-col md:overflow-hidden overflow-scroll gap-1">
+      <div className="flex md:flex-col md:overflow-hidden overflow-y-hidden overflow-x-scroll gap-1">
         {gamesList.map((game) => {
           return (
             <div
