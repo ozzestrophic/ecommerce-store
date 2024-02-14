@@ -29,15 +29,12 @@ const GamePreview = () => {
       console.log("starting");
 
       if (gameSupa.error || descSupa.error) {
-        console.log("not");
         setFetchError("couldn't fetch games");
         setGame(null);
         console.log(fetchError);
       }
       if (gameSupa.data && descSupa.data) {
         console.log("success");
-        console.log(descSupa.data);
-        console.log(gameSupa.data);
         setGame(gameSupa.data);
         setDesc(descSupa.data);
         setFetchError(null);

@@ -4,7 +4,7 @@ const PreviewSidebarTab = ({ leftText, rightText }) => {
       <div className="flex justify-between font-light">
         <p className=" opacity-60">{leftText}</p>
         <div>
-          <p>{rightText}</p>
+          <p className=" text-right">{rightText}</p>
         </div>
       </div>
       <hr className="opacity-20 mt-2" />
