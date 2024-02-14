@@ -9,7 +9,6 @@ const CarouselImage = ({ activeGame }) => {
         const currentGame = activeGame;
         setGame(currentGame);
       }
-      console.log("effect");
     }
     loadGame();
   }, [activeGame]);
