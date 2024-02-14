@@ -1,6 +1,6 @@
 const Card = ({ game }) => {
   return (
-    <div className=" flex flex-col justify-between h-full max-w-48">
+    <div className=" flex flex-col justify-between min-h-[350px] max-w-48">
       <img
         src={game.imgUrl}
         alt=""

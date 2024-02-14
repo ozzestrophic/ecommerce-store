@@ -10,7 +10,12 @@ const Home = () => {
 
   useEffect(() => {
     const fetchGames = async () => {
-      const { data, error } = await supabase.from("games").select().limit(5);
+      const { data, error } = await supabase
+        .from("games")
+        .select()
+        .eq("discount", "0")
+        .gte("currentPrice", "20")
+        .limit(5);
       if (error) {
         setFetchError("couldn't fetch games");
         setGamesList(null);
@@ -26,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section>
+    <section className="flex flex-col gap-8">
       <Carousel gamesList={gamesList} />
       <FeatureDiscounts gamesList={gamesList} />
     </section>
