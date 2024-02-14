@@ -13,7 +13,7 @@ const PreviewSidebar = ({ game }) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="py-1 px-2 bg-gray-800 text-xs w-fit rounded-md">
-        <p>BASE GAME</p>
+        <p>{game.publisher}</p>
       </div>
       <div className="flex gap-2 ">
         {game.discount !== 0 && (
@@ -29,7 +29,7 @@ const PreviewSidebar = ({ game }) => {
       <div className="flex flex-col gap-2 uppercase">
         {cartItems.includes(game.id) ? (
           <Link to="/cart">
-            <button className=" bg-epicBlue p-3 rounded-md w-full hover:bg-blue-500">
+            <button className=" bg-epicBluer-200 text-black p-3 rounded-md w-full hover:bg-epicBluer-300">
               View in cart
             </button>
           </Link>
@@ -45,7 +45,7 @@ const PreviewSidebar = ({ game }) => {
       <PreviewSidebarTab leftText="ESRB" rightText={game.esrbRating} />
       <PreviewSidebarTab leftText="Rating" rightText={game.rating} />
       <PreviewSidebarTab leftText="Developer" rightText={game.developer} />
-      <PreviewSidebarTab leftText="Publisher" rightText={game.publisher} />
+      {/* <PreviewSidebarTab leftText="Publisher" rightText={game.publisher} /> */}
     </div>
   );
 };
