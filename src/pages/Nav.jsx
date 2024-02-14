@@ -8,7 +8,8 @@ const Nav = () => {
   return (
     <nav className=" flex h-[8vh] items-center justify-between bg-[#18181D] px-12 text-white">
       <Link to="/">
-        <img src={storeIcon} alt="" className="w-14" />
+        {/* <img src={storeIcon} alt="" className="w-14" /> */}
+        <h3 className="font-bold text-lg uppercase">Awesome eStore</h3>
       </Link>
       <Link to="cart" className="flex items-center gap-2">
         <p>Cart</p>

@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import CarouselTab from "./CarouselTab";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CarouselImage from "./CarouselImage";
 
 const Carousel = ({ gamesList }) => {
   const [activeGame, setActiveGame] = useState();
+
+  useEffect(() => {
+    setActiveGame(gamesList[0]);
+  }, [gamesList]);
   return (
     <article className=" max-w-6xl grid md:grid-cols-carousel gap-8 font-light">
       <CarouselImage activeGame={activeGame} />
