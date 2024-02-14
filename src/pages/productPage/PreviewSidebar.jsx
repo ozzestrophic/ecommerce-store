@@ -7,7 +7,6 @@ const PreviewSidebar = ({ game }) => {
   const { addToCart, cartItems } = useContext(cartContext);
   const handleAddToCart = () => {
     if (!cartItems.includes(game.id)) {
-      // this doesn't work because object is recreated for every page load
       addToCart(game.id);
     }
   };

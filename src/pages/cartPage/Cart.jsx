@@ -5,13 +5,7 @@ import CartItem from "./CartItem.jsx";
 import CartSideBar from "./CartSideBar.jsx";
 
 import supabase from "../../config/supabaseClient.js";
-
-function calculateTotal(dataArray, key) {
-  const totalNum = dataArray.reduce((total, item) => {
-    return total + item[key];
-  }, 0);
-  return totalNum;
-}
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems } = useContext(cartContext);
@@ -52,6 +46,22 @@ const Cart = () => {
     }
   }, [games]);
 
+  if (cartItems.length === 0) {
+    return (
+      <div className="flex justify-center flex-col gap-2 items-center">
+        <h1 className="text-4xl">Your cart is empty</h1>
+        <h3 className="text-xl opacity-75 font-light">
+          Start adding items to your cart
+        </h3>
+        <Link to="/">
+          <button className="mt-4 p-4 border-solid border-gray-600 border rounded-lg">
+            Back to Home
+          </button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className=" w-full max-w-7xl">
       <h1 className=" text-left text-3xl mb-8">My Cart</h1>
@@ -68,3 +78,10 @@ const Cart = () => {
   );
 };
 export default Cart;
+
+function calculateTotal(dataArray, key) {
+  const totalNum = dataArray.reduce((total, item) => {
+    return total + item[key];
+  }, 0);
+  return totalNum;
+}

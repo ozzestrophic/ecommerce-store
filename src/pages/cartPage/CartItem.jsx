@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { cartContext } from "../../App";
 
 const CartItem = ({ game }) => {
-  const { removeCartItem, cartItems } = useContext(cartContext);
+  const { removeCartItem } = useContext(cartContext);
 
   return (
     <article className=" bg-zinc-800 w-full flex gap-8 p-10">
