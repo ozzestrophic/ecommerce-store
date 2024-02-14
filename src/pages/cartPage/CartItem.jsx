@@ -5,8 +5,12 @@ const CartItem = ({ game }) => {
   const { removeCartItem } = useContext(cartContext);
 
   return (
-    <article className=" bg-zinc-800 w-full flex gap-8 p-10">
-      <img src={game.imgUrl} alt="" className=" w-32 h-44 object-cover" />
+    <article className=" bg-zinc-800 w-full flex flex-col md:flex-row gap-8 p-10">
+      <img
+        src={game.imgUrl}
+        alt=""
+        className=" w-full md:w-32 h-44 object-cover"
+      />
       <div className="flex justify-between w-full">
         <div>
           <p className="bg-zinc-600 text-xs p-1 rounded-sm w-fit">

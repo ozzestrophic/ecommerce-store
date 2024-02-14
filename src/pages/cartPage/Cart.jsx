@@ -65,7 +65,7 @@ const Cart = () => {
   return (
     <div className=" w-full max-w-7xl">
       <h1 className=" text-left text-3xl mb-8">My Cart</h1>
-      <div className="grid gap-8 grid-cols-carousel">
+      <div className="grid gap-8 md:grid-cols-carousel">
         <section className="flex flex-col gap-8">
           {games &&
             games.map((game) => {
