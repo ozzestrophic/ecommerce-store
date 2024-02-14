@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import image1 from "../../assets/images/image-1.avif";
+import { Link } from "react-router-dom";
 
 const CarouselImage = ({ activeGame }) => {
   const [Game, setGame] = useState({});
@@ -8,19 +8,23 @@ const CarouselImage = ({ activeGame }) => {
       if (activeGame) {
         const currentGame = activeGame;
         setGame(currentGame);
-        console.log("this is the active game");
       }
     }
     loadGame();
   }, [activeGame]);
   return (
-    <div className="">
+    <div className=" relative ">
       {Game.imgUrl && (
-        <img
-          src={Game.imgUrl}
-          alt=""
-          className="rounded-2xl w-full h-full object-cover"
-        />
+        <Link to={`game/${Game.id}`}>
+          <div className="bg-gradient-to-tr to-transparent to-50% from-slate-900 flex flex-col items-start justify-end p-8 absolute w-full h-full">
+            <h2 className="font-bold text-3xl">{Game.title}</h2>
+          </div>
+          <img
+            src={Game.imgUrl}
+            alt=""
+            className="rounded-2xl w-full h-full object-cover"
+          />
+        </Link>
       )}
     </div>
   );
