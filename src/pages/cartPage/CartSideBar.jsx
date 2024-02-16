@@ -14,7 +14,7 @@ const CartSideBar = ({ priceTotal }) => {
         <hr className="  border-gray-700" />
         <div className="flex justify-between text-sm">
           <p>Subtotal</p>
-          <p>${priceTotal.currentTotal}</p>
+          <p>${Math.round(priceTotal.currentTotal * 100) / 100}</p>
         </div>
       </div>
       <button className=" bg-epicBlue w-full p-4 rounded-lg">Check Out</button>
