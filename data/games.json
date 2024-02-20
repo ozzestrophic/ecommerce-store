@@ -3,32 +3,139 @@
     {
       "id": "1",
       "title": "Fifa",
-      "Publisher": "Electronic Arts",
+      "publisher": "Electronic Arts",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
       "imgUrl": "../src/assets/images/games/fifa-1.jpeg"
     },
     {
       "id": "2",
       "title": "GTA",
-      "Publisher": "Rock Star",
+      "publisher": "Rock Star",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
       "imgUrl": "../src/assets/images/games/gtav.webp"
     },
     {
       "id": "3",
       "title": "AC Brotherhood",
-      "Publisher": "Ubisoft",
+      "publisher": "Ubisoft",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
       "imgUrl": "../src/assets/images/games/ACbrotherhood.jpeg"
     },
     {
       "id": "4",
       "title": "League of Legends",
-      "Publisher": "Riot",
+      "publisher": "Riot",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
       "imgUrl": "../src/assets/images/games/leagueoflegends.jpeg"
     },
     {
       "id": "5",
       "title": "Metal Gear Solid",
-      "Publisher": "Konami",
+      "publisher": "Konami",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
       "imgUrl": "../src/assets/images/games/MTG.jpeg"
+    },
+
+    {
+      "id": "11",
+      "title": "Fifa",
+      "publisher": "Electronic Arts",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/fifa-1.jpeg"
+    },
+    {
+      "id": "12",
+      "title": "GTA",
+      "publisher": "Rock Star",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/gtav.webp"
+    },
+    {
+      "id": "14",
+      "title": "League of Legends",
+      "publisher": "Riot",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/leagueoflegends.jpeg"
+    },
+    {
+      "id": "8",
+      "title": "AC Brotherhood",
+      "publisher": "Ubisoft",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/ACbrotherhood.jpeg"
+    },
+    {
+      "id": "10",
+      "title": "Metal Gear Solid",
+      "publisher": "Konami",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/MTG.jpeg"
+    },
+    {
+      "id": "9",
+      "title": "League of Legends",
+      "publisher": "Riot",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/leagueoflegends.jpeg"
+    },
+
+    {
+      "id": "13",
+      "title": "AC Brotherhood",
+      "publisher": "Ubisoft",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/ACbrotherhood.jpeg"
+    },
+    {
+      "id": "15",
+      "title": "Metal Gear Solid",
+      "publisher": "Konami",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/MTG.jpeg"
+    },
+    {
+      "id": "6",
+      "title": "Fifa",
+      "publisher": "Electronic Arts",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/fifa-1.jpeg"
+    },
+    {
+      "id": "7",
+      "title": "GTA",
+      "publisher": "Rock Star",
+      "discount": "10",
+      "oldPrice": "13.99",
+      "currentPrice": "9.99",
+      "imgUrl": "../src/assets/images/games/gtav.webp"
     }
   ]
 }

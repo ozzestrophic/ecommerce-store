@@ -4,6 +4,7 @@ import Home from "./pages/homePage/Home.jsx";
 
 import { createBrowserRouter } from "react-router-dom";
 import Cart from "./pages/cartPage/Cart.jsx";
+import Categories from "./pages/categories/Categories.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "categories",
+        element: <Categories />,
       },
     ],
   },
