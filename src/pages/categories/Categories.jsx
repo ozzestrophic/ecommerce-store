@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 // import supabase from "../../config/supabaseClient";
 import Card from "../homePage/Card";
+import CategoriesSideBar from "./CategoriesSideBar";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [games, setGames] = useState([]);
@@ -73,10 +75,14 @@ const Categories = () => {
     <section>
       <h1 className="text-center text-4xl mb-8">Categories</h1>
       <div className="flex gap-8">
-        <aside className=" min-w-[300px] bg-slate-600"></aside>
+        <CategoriesSideBar />
         <div className="flex flex-1 flex-wrap gap-4">
           {games.map((game) => {
-            return <Card key={game.id} game={game} />;
+            return (
+              <Link to={`game/${game.id}`} key={game.id}>
+                <Card game={game} />
+              </Link>
+            );
           })}
         </div>
       </div>

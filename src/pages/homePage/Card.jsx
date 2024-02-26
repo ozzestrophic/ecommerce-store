@@ -1,6 +1,6 @@
 const Card = ({ game }) => {
   return (
-    <div className=" flex flex-col justify-between min-h-[350px] max-w-48 hover:scale-105 transition-all ease-out">
+    <div className=" flex flex-col justify-between min-h-[350px] cursor-pointer max-w-48 hover:scale-105 transition-all ease-out">
       <img
         src={game.imgUrl}
         alt=""
