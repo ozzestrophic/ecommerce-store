@@ -34,6 +34,7 @@ const Cart = () => {
     };
 
     loadGames();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartItems]);
 
   useEffect(() => {

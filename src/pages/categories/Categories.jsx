@@ -85,13 +85,19 @@ const Categories = () => {
     };
 
     fetchFunc();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);
 
   return (
     <currentCategoryContext.Provider value={{ currentCategory, setCategory }}>
       <section>
-        <h1 className="text-center text-4xl mb-8">Categories</h1>
-        <h2 className="text-center text-2xl mb-8">{currentCategory}</h2>
+        <h1 className="text-center text-2xl text-gray-500 mb-8">
+          Current category{" "}
+          <span className="text-center text-white font-bold text-2xl mb-8">
+            {currentCategory}
+          </span>
+        </h1>
+        {/* ====== fix the sidebar when games are empty ===== */}
         <div className="flex gap-8">
           <CategoriesSideBar />
           <div className="flex flex-1 flex-wrap gap-4">

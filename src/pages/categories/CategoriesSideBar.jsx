@@ -21,6 +21,7 @@ const CategoriesSideBar = () => {
     };
 
     fetchCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <aside className=" min-w-[300px] bg-gray-800 p-4 rounded-lg flex flex-col gap-4">
