@@ -1,7 +1,7 @@
-const CategoriesTabs = () => {
+const CategoriesTabs = ({ category }) => {
   return (
     <div className="flex p-4 hover:bg-gray-700 rounded-md cursor-pointer">
-      <p>Action RPG</p>
+      <p>{category}</p>
     </div>
   );
 };
