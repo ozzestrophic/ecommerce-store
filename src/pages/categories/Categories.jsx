@@ -3,11 +3,16 @@ import supabase from "../../config/supabaseClient";
 import Card from "../homePage/Card";
 import CategoriesSideBar from "./CategoriesSideBar";
 import { Link } from "react-router-dom";
+import currentCategoryContext from "./categoryContext";
 
 const Categories = () => {
+  const [currentCategory, setCurrentCategory] = useState("Action RPG");
+  const setCategory = (entry) => {
+    setCurrentCategory(entry);
+  };
+
   const [gamesList, setGamesList] = useState([]);
   const [fetchError, setFetchError] = useState(null);
-  const [category, setCategory] = useState("Action RPG");
 
   const categoryId = useRef("");
   const gamesListIds = useRef([]);
@@ -23,14 +28,12 @@ const Categories = () => {
   //   fetchGames();
   // }, []);
 
-  // fetch from supabase =========
-
   useEffect(() => {
     const fetchId = async () => {
       const supaCategoryId = await supabase
         .from("categories")
         .select("id")
-        .eq("category", category)
+        .eq("category", currentCategory)
         .single();
 
       if (supaCategoryId.error) {
@@ -82,24 +85,27 @@ const Categories = () => {
     };
 
     fetchFunc();
-  }, [category]);
+  }, [currentCategory]);
 
   return (
-    <section>
-      <h1 className="text-center text-4xl mb-8">Categories</h1>
-      <div className="flex gap-8">
-        <CategoriesSideBar />
-        <div className="flex flex-1 flex-wrap gap-4">
-          {gamesList.map((game) => {
-            return (
-              <Link to={`/game/${game.id}`} key={game.id}>
-                <Card game={game} />
-              </Link>
-            );
-          })}
+    <currentCategoryContext.Provider value={{ currentCategory, setCategory }}>
+      <section>
+        <h1 className="text-center text-4xl mb-8">Categories</h1>
+        <h2 className="text-center text-2xl mb-8">{currentCategory}</h2>
+        <div className="flex gap-8">
+          <CategoriesSideBar />
+          <div className="flex flex-1 flex-wrap gap-4">
+            {gamesList.map((game) => {
+              return (
+                <Link to={`/game/${game.id}`} key={game.id}>
+                  <Card game={game} />
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </currentCategoryContext.Provider>
   );
 };
 export default Categories;
