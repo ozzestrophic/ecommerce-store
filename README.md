@@ -1,3 +1,4 @@
 # ECOMMERCE STORE
 
-This is an ecommerce project made as part of the odin project as a practice on routing and state management
+This is a demo ecommerce store to sell games online
+Live version: https://awesome-store-ten.vercel.app/
