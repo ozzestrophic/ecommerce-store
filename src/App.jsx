@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import Body from "./pages/Body";
 import Nav from "./pages/Nav";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const cartContext = createContext({
   cartItems: [],
@@ -23,10 +24,12 @@ function App() {
   };
 
   return (
-    <cartContext.Provider value={{ cartItems, addToCart, removeCartItem }}>
-      <Nav />
-      <Body />
-    </cartContext.Provider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <cartContext.Provider value={{ cartItems, addToCart, removeCartItem }}>
+        <Nav />
+        <Body />
+      </cartContext.Provider>
+    </ThemeProvider>
   );
 }
 
