@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
+
+// ==== components ====
 import Card from "../homePage/Card";
 import CategoriesSideBar from "./CategoriesSideBar";
-import { Link } from "react-router-dom";
 import currentCategoryContext from "./categoryContext";
 
 const Categories = () => {
   const [currentCategory, setCurrentCategory] = useState("Action RPG");
+
   const setCategory = (entry) => {
     setCurrentCategory(entry);
   };
