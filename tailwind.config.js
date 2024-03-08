@@ -27,7 +27,7 @@ module.exports = {
         product: "3fr 1fr",
       },
       colors: {
-        epicBlue: "#0074E3",
+        epicBlue: "#F28806",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -8,7 +8,7 @@ import supabase from "../../config/supabaseClient.js";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems } = useContext(cartContext);
+  const { cartItems, clearCart } = useContext(cartContext);
 
   const [games, setGames] = useState();
   const [priceTotal, setPriceTotal] = useState();
@@ -73,7 +73,9 @@ const Cart = () => {
               return <CartItem key={game.id} game={game} />;
             })}
         </section>
-        {priceTotal && <CartSideBar priceTotal={priceTotal} />}
+        {priceTotal && (
+          <CartSideBar priceTotal={priceTotal} clearCart={clearCart} />
+        )}
       </div>
     </div>
   );

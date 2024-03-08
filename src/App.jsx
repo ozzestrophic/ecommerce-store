@@ -2,11 +2,13 @@ import { useState, createContext } from "react";
 import Body from "./pages/Body";
 import Nav from "./pages/Nav";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const cartContext = createContext({
   cartItems: [],
   addToCart: () => {},
   removeCartItem: () => {},
+  clearCart: () => {},
 });
 
 function App() {
@@ -23,11 +25,18 @@ function App() {
     setCartItems(newCart);
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <cartContext.Provider value={{ cartItems, addToCart, removeCartItem }}>
+      <cartContext.Provider
+        value={{ cartItems, addToCart, removeCartItem, clearCart }}
+      >
         <Nav />
         <Body />
+        <Toaster />
       </cartContext.Provider>
     </ThemeProvider>
   );
