@@ -1,47 +1,38 @@
-// react imports
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
 
+// components
 import PreviewSidebar from "./PreviewSidebar";
 import PreviewData from "./PreviewData";
 
 const GamePreview = () => {
   const { id } = useParams();
   const [game, setGame] = useState();
-  const [desc, setDesc] = useState();
   const [fetchError, setFetchError] = useState(null);
 
   useEffect(() => {
     const loadGameData = async () => {
-      const gameSupa = await supabase
+      const { data, error } = await supabase
         .from("games")
-        .select()
+        .select("*, descriptions(*)")
         .eq("id", id)
         .single();
 
-      const descSupa = await supabase
-        .from("descriptions")
-        .select()
-        .eq("gameID", id)
-        .single();
-
-      console.log("starting");
-
-      if (gameSupa.error || descSupa.error) {
+      if (error) {
         setFetchError("couldn't fetch games");
         setGame(null);
         console.log(fetchError);
       }
-      if (gameSupa.data && descSupa.data) {
-        console.log("success");
-        setGame(gameSupa.data);
-        setDesc(descSupa.data);
+      if (data) {
+        setGame(data);
         setFetchError(null);
+        console.log(data);
       }
     };
 
     loadGameData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (game) {
@@ -51,7 +42,7 @@ const GamePreview = () => {
           <h1 className=" text-left text-4xl mb-4">{game.title}</h1>
         </section>
         <section className="grid md:grid-cols-product gap-16">
-          <PreviewData game={game} desc={desc} />
+          <PreviewData game={game} desc={game.descriptions} />
           <PreviewSidebar game={game} />
         </section>
       </div>
