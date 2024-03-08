@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx,js,jsx}",
+    "./components/**/*.{ts,tsx,js,jsx}",
+    "./app/**/*.{ts,tsx,js,jsx}",
+    "./src/**/*.{ts,tsx,js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -17,7 +17,17 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        Noto: ["Noto Serif", "serif"],
+        PlusJakartaSans: ["Plus Jakarta Sans", "sans-serif"],
+      },
+      gridTemplateColumns: {
+        // carousel template
+        carousel: "6fr 2fr",
+        product: "3fr 1fr",
+      },
       colors: {
+        epicBlue: "#0074E3",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,4 +84,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
