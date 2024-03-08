@@ -6,6 +6,7 @@ const Card = ({ game }) => {
         alt=""
         className="object-cover rounded-2xl h-60 "
       />
+
       <div className="flex flex-col gap-1 w-full  ">
         <h3 className=" ">{game.title}</h3>
         <p className=" text-gray-500 text-xs tracking-widest">

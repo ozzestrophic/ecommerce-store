@@ -7,8 +7,10 @@ import supabase from "../../config/supabaseClient";
 import Card from "../homePage/Card";
 import CategoriesSideBar from "./CategoriesSideBar";
 import currentCategoryContext from "./categoryContext";
+import CardSkeleton from "../homePage/CardSkeleton";
 
 const Categories = () => {
+  const [loading, setLoading] = useState(true);
   const { category } = useParams();
   const [currentCategory, setCurrentCategory] = useState(
     category ? category : "Action RPG"
@@ -35,6 +37,7 @@ const Categories = () => {
       if (supaGames.data) {
         setGamesList(supaGames.data[0].games);
         setFetchError(null);
+        setLoading(false);
 
         console.log(supaGames.data);
       }
@@ -57,16 +60,18 @@ const Categories = () => {
         <div className="flex gap-8 w-svw p-10">
           <CategoriesSideBar />
           <div className="flex flex-1 flex-wrap gap-4">
-            {gamesList.length === 0 && (
+            {/* {gamesList.length === 0 && (
               <h2>There is no games in this category</h2>
-            )}
-            {gamesList.map((game) => {
-              return (
-                <Link to={`/game/${game.id}`} key={game.id}>
-                  <Card game={game} />
-                </Link>
-              );
-            })}
+            )} */}
+            {loading
+              ? [1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)
+              : gamesList.map((game) => {
+                  return (
+                    <Link to={`/game/${game.id}`} key={game.id}>
+                      <Card game={game} />
+                    </Link>
+                  );
+                })}
           </div>
         </div>
       </section>
