@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
 
 // ==== components ====
@@ -8,7 +9,11 @@ import CategoriesSideBar from "./CategoriesSideBar";
 import currentCategoryContext from "./categoryContext";
 
 const Categories = () => {
-  const [currentCategory, setCurrentCategory] = useState("Action RPG");
+  const { category } = useParams();
+  console.log("category is ", category);
+  const [currentCategory, setCurrentCategory] = useState(
+    category ? category : "Action RPG"
+  );
 
   const setCategory = (entry) => {
     setCurrentCategory(entry);

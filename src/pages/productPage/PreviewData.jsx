@@ -1,4 +1,6 @@
-const PreviewData = ({ game, desc }) => {
+import { Link } from "react-router-dom";
+
+const PreviewData = ({ game, desc, categories }) => {
   return (
     <article className="flex flex-col gap-16">
       <img src={game.imgUrl && game.imgUrl} alt="" className="rounded-md" />
@@ -15,7 +17,11 @@ const PreviewData = ({ game, desc }) => {
           <div className=" w-[1px] opacity-60 bg-white"></div>
           <div>
             <p className="opacity-75 font-light ">Genres</p>
-            <p className=" underline">Simulation</p>
+            {categories.map((category) => (
+              <Link key={category.id} to={`/categories/${category.category}`}>
+                <p className=" underline">{category.category}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

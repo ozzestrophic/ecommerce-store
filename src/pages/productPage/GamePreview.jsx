@@ -15,7 +15,7 @@ const GamePreview = () => {
     const loadGameData = async () => {
       const { data, error } = await supabase
         .from("games")
-        .select("*, descriptions(*)")
+        .select("*, descriptions(description), categories(*)")
         .eq("id", id)
         .single();
 
@@ -42,7 +42,11 @@ const GamePreview = () => {
           <h1 className=" text-left text-4xl mb-4">{game.title}</h1>
         </section>
         <section className="grid md:grid-cols-product gap-16">
-          <PreviewData game={game} desc={game.descriptions} />
+          <PreviewData
+            game={game}
+            desc={game.descriptions}
+            categories={game.categories}
+          />
           <PreviewSidebar game={game} />
         </section>
       </div>
