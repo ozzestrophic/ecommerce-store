@@ -3,6 +3,10 @@ import { cartContext } from "../../App.jsx";
 import PreviewSidebarTab from "./PreviewSidebarTab";
 import { Link } from "react-router-dom";
 
+// components
+import { Button } from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
+
 const PreviewSidebar = ({ game }) => {
   const { addToCart, cartItems } = useContext(cartContext);
   const handleAddToCart = () => {
@@ -29,17 +33,16 @@ const PreviewSidebar = ({ game }) => {
       <div className="flex flex-col gap-2 uppercase">
         {cartItems.includes(game.id) ? (
           <Link to="/cart">
-            <button className=" bg-epicBluer-200 text-black p-3 rounded-md w-full hover:bg-epicBluer-300">
+            <Button variant="outline" className="w-full p-6 flex gap-2">
+              <ShoppingCart />
               View in cart
-            </button>
+            </Button>
           </Link>
         ) : (
-          <button
-            className=" bg-epicBlue p-3 rounded-md w-full hover:bg-blue-500"
-            onClick={handleAddToCart}
-          >
+          <Button className=" w-full p-6 flex gap-2" onClick={handleAddToCart}>
+            <ShoppingCart />
             Add to cart
-          </button>
+          </Button>
         )}
       </div>
       <PreviewSidebarTab leftText="ESRB" rightText={game.esrbRating} />
