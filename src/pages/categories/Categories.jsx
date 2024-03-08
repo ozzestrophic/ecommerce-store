@@ -50,17 +50,17 @@ const Categories = () => {
   return (
     <currentCategoryContext.Provider value={{ currentCategory, setCategory }}>
       <section>
-        <h1 className="text-center text-2xl text-gray-500 mb-8">
-          Current category{" "}
-          <span className="text-center text-white font-bold text-2xl mb-8">
-            {currentCategory}
+        <div className="flex flex-col">
+          <span className="text-center text-lg opacity-40 mb-8">
+            Current category
           </span>
-        </h1>
+          <h1 className="text-center text-white font-bold text-2xl mb-8">
+            {currentCategory}
+          </h1>
+        </div>
         {/* ====== fix the sidebar when responsive ===== */}
-        <div className="flex sm:flex-row flex-col gap-8 w-svw p-10">
-          <div className="sm:block ">
-            <CategoriesSideBar />
-          </div>
+        <div className="flex sm:flex-row flex-col gap-8 w-svw md:p-10">
+          <CategoriesSideBar />
           <div className="flex justify-center sm:justify-normal content-start flex-1 flex-wrap gap-4 ">
             {loading && [1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)}
             {!loading && gamesList.length === 0 ? (
