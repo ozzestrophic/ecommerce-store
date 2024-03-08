@@ -3,6 +3,7 @@ import Body from "./pages/Body";
 import Nav from "./pages/Nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "./components/footer";
 
 export const cartContext = createContext({
   cartItems: [],
@@ -37,6 +38,7 @@ function App() {
         <Nav />
         <Body />
         <Toaster />
+        <Footer />
       </cartContext.Provider>
     </ThemeProvider>
   );
