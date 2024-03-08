@@ -60,18 +60,18 @@ const Categories = () => {
         <div className="flex gap-8 w-svw p-10">
           <CategoriesSideBar />
           <div className="flex flex-1 flex-wrap gap-4">
-            {/* {gamesList.length === 0 && (
+            {loading && [1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)}
+            {!loading && gamesList.length === 0 ? (
               <h2>There is no games in this category</h2>
-            )} */}
-            {loading
-              ? [1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)
-              : gamesList.map((game) => {
-                  return (
-                    <Link to={`/game/${game.id}`} key={game.id}>
-                      <Card game={game} />
-                    </Link>
-                  );
-                })}
+            ) : (
+              gamesList.map((game) => {
+                return (
+                  <Link to={`/game/${game.id}`} key={game.id}>
+                    <Card game={game} />
+                  </Link>
+                );
+              })
+            )}
           </div>
         </div>
       </section>
