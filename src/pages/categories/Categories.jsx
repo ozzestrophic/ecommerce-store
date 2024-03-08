@@ -10,7 +10,6 @@ import currentCategoryContext from "./categoryContext";
 
 const Categories = () => {
   const { category } = useParams();
-  console.log("category is ", category);
   const [currentCategory, setCurrentCategory] = useState(
     category ? category : "Action RPG"
   );
@@ -54,10 +53,13 @@ const Categories = () => {
             {currentCategory}
           </span>
         </h1>
-        {/* ====== fix the sidebar when games are empty ===== */}
-        <div className="flex gap-8">
+        {/* ====== fix the sidebar when responsive ===== */}
+        <div className="flex gap-8 w-svw p-10">
           <CategoriesSideBar />
           <div className="flex flex-1 flex-wrap gap-4">
+            {gamesList.length === 0 && (
+              <h2>There is no games in this category</h2>
+            )}
             {gamesList.map((game) => {
               return (
                 <Link to={`/game/${game.id}`} key={game.id}>
