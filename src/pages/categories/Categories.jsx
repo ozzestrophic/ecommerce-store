@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import supabase from "../../config/supabaseClient";
 import Card from "../homePage/Card";
 import CategoriesSideBar from "./CategoriesSideBar";
@@ -14,77 +14,26 @@ const Categories = () => {
   const [gamesList, setGamesList] = useState([]);
   const [fetchError, setFetchError] = useState(null);
 
-  const categoryId = useRef("");
-  const gamesListIds = useRef([]);
-
-  // ============ fetch from local serve =============
-  // useEffect(() => {
-  //   const fetchGames = async () => {
-  //     const fetchedgames = await fetch("http://localhost:4000/games");
-  //     const gamesListArray = await fetchedgames.json();
-  //     setGamesList(gamesListArray);
-  //   };
-
-  //   fetchGames();
-  // }, []);
-
   useEffect(() => {
-    const fetchId = async () => {
-      const supaCategoryId = await supabase
-        .from("categories")
-        .select("id")
-        .eq("category", currentCategory)
-        .single();
-
-      if (supaCategoryId.error) {
-        setFetchError("couldn't fetch category ID");
-        console.log(fetchError);
-      }
-      if (supaCategoryId.data) {
-        categoryId.current = supaCategoryId.data;
-        setFetchError(null);
-      }
-    };
-
-    const fetchGameIDs = async () => {
-      const supaGamesIDs = await supabase
-        .from("categoriesGamesRel")
-        .select("gameID")
-        .eq("categoryID", categoryId.current.id);
-
-      if (supaGamesIDs.error) {
-        setFetchError("couldn't fetch game IDs");
-        console.log(fetchError);
-      }
-      if (supaGamesIDs.data) {
-        let array = supaGamesIDs.data.map((data) => data.gameID);
-        gamesListIds.current = array;
-        setFetchError(null);
-      }
-    };
-
     const fetchGames = async () => {
       const supaGames = await supabase
-        .from("games")
-        .select()
-        .in("id", gamesListIds.current);
+        .from("categories")
+        .select("id , category, games(*) ")
+        .eq("category", currentCategory);
 
       if (supaGames.error) {
         setFetchError("couldn't fetch game IDs");
         console.log(fetchError);
       }
       if (supaGames.data) {
-        setGamesList(supaGames.data);
+        setGamesList(supaGames.data[0].games);
         setFetchError(null);
+
+        console.log(supaGames.data);
       }
     };
-    const fetchFunc = async () => {
-      await fetchId();
-      await fetchGameIDs();
-      await fetchGames();
-    };
 
-    fetchFunc();
+    fetchGames();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCategory]);
 
