@@ -3,8 +3,10 @@ import FeatureDiscounts from "./FeatureDiscounts";
 import supabase from "../../config/supabaseClient";
 
 import { useEffect, useState } from "react";
+import CarouselSkeleton from "./CarouselSkeleton";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [gamesList, setGamesList] = useState([]);
   const [fetchError, setFetchError] = useState(null);
 
@@ -24,6 +26,7 @@ const Home = () => {
       if (data) {
         setGamesList(data);
         setFetchError(null);
+        setLoading(false);
       }
     };
 
@@ -32,7 +35,7 @@ const Home = () => {
 
   return (
     <section className="flex flex-col gap-8">
-      <Carousel gamesList={gamesList} />
+      {loading ? <CarouselSkeleton /> : <Carousel gamesList={gamesList} />}
       <FeatureDiscounts gamesList={gamesList} />
     </section>
   );
