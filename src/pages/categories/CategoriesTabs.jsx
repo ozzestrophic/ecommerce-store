@@ -1,17 +1,19 @@
 import { useContext } from "react";
 import currentCategoryContext from "./categoryContext";
+import { Button } from "@/components/ui/button";
 
 const CategoriesTabs = ({ category }) => {
   const { setCategory } = useContext(currentCategoryContext);
   return (
-    <button
+    <Button
+      variant="ghost"
       onClick={() => {
         setCategory(category);
       }}
-      className="flex p-4 hover:bg-gray-700 rounded-md w-full cursor-pointer"
+      className="w-full flex justify-start "
     >
       {category}
-    </button>
+    </Button>
   );
 };
 export default CategoriesTabs;

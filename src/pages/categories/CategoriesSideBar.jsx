@@ -3,14 +3,7 @@ import supabase from "../../config/supabaseClient";
 import CategoriesTabs from "./CategoriesTabs";
 
 // components
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const CategoriesSideBar = () => {
   const [fetchError, setFetchError] = useState(null);
@@ -35,14 +28,21 @@ const CategoriesSideBar = () => {
   }, []);
   return (
     <aside className=" min-w-[300px] p-4 rounded-lg flex flex-col gap-4">
-      <Card>
-        <ul>
-          {categories.current.map((item) => (
-            <li key={item.id}>
-              <CategoriesTabs category={item.category} />
-            </li>
-          ))}
-        </ul>
+      <Card className="overflow-x-auto">
+        <CardHeader>
+          <CardTitle>
+            <h2 className=" opacity-70 text-sm">Choose a category</h2>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="flex sm:flex-col">
+            {categories.current.map((item) => (
+              <li key={item.id}>
+                <CategoriesTabs category={item.category} />
+              </li>
+            ))}
+          </ul>
+        </CardContent>
       </Card>
     </aside>
   );

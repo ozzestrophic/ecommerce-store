@@ -57,9 +57,11 @@ const Categories = () => {
           </span>
         </h1>
         {/* ====== fix the sidebar when responsive ===== */}
-        <div className="flex gap-8 w-svw p-10">
-          <CategoriesSideBar />
-          <div className="flex flex-1 flex-wrap gap-4">
+        <div className="flex sm:flex-row flex-col gap-8 w-svw p-10">
+          <div className="sm:block ">
+            <CategoriesSideBar />
+          </div>
+          <div className="flex justify-center sm:justify-normal content-start flex-1 flex-wrap gap-4 ">
             {loading && [1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)}
             {!loading && gamesList.length === 0 ? (
               <h2>There is no games in this category</h2>
