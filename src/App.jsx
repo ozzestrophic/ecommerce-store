@@ -3,7 +3,7 @@ import Body from "./pages/Body";
 import Nav from "./pages/Nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 export const cartContext = createContext({
   cartItems: [],
